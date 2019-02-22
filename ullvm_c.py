@@ -20,6 +20,26 @@ LLVMAbortProcessAction = 0
 LLVMPrintMessageAction = 1
 LLVMReturnStatusAction = 2
 
+# LLVMCodeGenOptLevel;
+LLVMCodeGenLevelNone = 0
+LLVMCodeGenLevelLess = 1
+LLVMCodeGenLevelDefault = 2
+LLVMCodeGenLevelAggressive = 3
+
+# LLVMRelocMode;
+LLVMRelocDefault = 0
+LLVMRelocStatic = 1
+LLVMRelocPIC = 2
+LLVMRelocDynamicNoPic = 3
+
+# LLVMCodeModel;
+LLVMCodeModelDefault = 0
+LLVMCodeModelJITDefault = 1
+LLVMCodeModelSmall = 2
+LLVMCodeModelKernel = 3
+LLVMCodeModelMedium = 4
+LLVMCodeModelLarge = 5
+
 F("P", "LLVMInt32Type", "")
 F("P", "LLVMFunctionType", "PPIi")
 F("P", "LLVMModuleCreateWithName", "s")
@@ -36,10 +56,20 @@ F("v", "LLVMInitializeX86Target", "")
 F("v", "LLVMInitializeX86TargetMC", "")
 F("v", "LLVMInitializeX86AsmPrinter", "")
 F("v", "LLVMInitializeX86AsmParser", "")
+F("s", "LLVMGetDefaultTargetTriple", "")
+F("i", "LLVMGetTargetFromTriple", "spp")
+F("i", "LLVMTargetHasJIT", "P")
+F("P", "LLVMCreateTargetMachine", "PsssIII")
 F("i", "LLVMCreateExecutionEngineForModule", "pPp")
 F("P", "LLVMCreateGenericValueOfInt", "Pqi")
 F("P", "LLVMRunFunction", "PPIP")
 F("Q", "LLVMGetFunctionAddress", "Ps")
+
+F("P", "LLVMOrcMakeSharedModule", "P")
+F("P", "LLVMOrcCreateInstance", "P")
+F("i", "LLVMOrcAddEagerlyCompiledIR", "PpPCp")
+F("i", "LLVMOrcAddLazilyCompiledIR", "PpPCp")
+F("i", "LLVMOrcGetSymbolAddress", "Pps")
 
 
 def by_ref(type):
