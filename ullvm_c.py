@@ -8,7 +8,7 @@
 # The MIT License
 
 import ffi
-from array import array
+from uarray import array
 
 
 L = ffi.open("/usr/lib/llvm-6.0/lib/libLLVM.so")
