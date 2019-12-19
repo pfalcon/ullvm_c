@@ -40,6 +40,7 @@ LLVMCodeModelKernel = 3
 LLVMCodeModelMedium = 4
 LLVMCodeModelLarge = 5
 
+# Type methods
 F("P", "LLVMVoidType", "")
 F("P", "LLVMInt32Type", "")
 F("P", "LLVMIntType", "I")
@@ -47,19 +48,23 @@ F("P", "LLVMFloatType", "")
 F("P", "LLVMDoubleType", "")
 F("P", "LLVMPointerType", "PI")
 F("P", "LLVMFunctionType", "PPIi")
+# Module methods
 F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
 F("P", "LLVMAddGlobal", "PPs")
 F("P", "LLVMAddFunction", "PsP")
+# Function methods
 F("P", "LLVMAppendBasicBlock", "Ps")
+F("P", "LLVMGetParam", "PI")
+# Builder methods
 F("P", "LLVMCreateBuilder", "")
 F("v", "LLVMPositionBuilderAtEnd", "PP")
-F("P", "LLVMGetParam", "PI")
 F("P", "LLVMConstInt", "PQI")
 F("P", "LLVMBuildAlloca", "PPs")
 F("P", "LLVMBuildAdd", "PPPs")
 F("P", "LLVMBuildNeg", "PPs")
 F("P", "LLVMBuildRet", "PP")
+# Codegeneration functions
 F("v", "LLVMInitializeX86TargetInfo", "")
 F("v", "LLVMInitializeX86Target", "")
 F("v", "LLVMInitializeX86TargetMC", "")
