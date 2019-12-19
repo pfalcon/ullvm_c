@@ -40,8 +40,12 @@ LLVMCodeModelKernel = 3
 LLVMCodeModelMedium = 4
 LLVMCodeModelLarge = 5
 
+F("P", "LLVMVoidType", "")
 F("P", "LLVMInt32Type", "")
 F("P", "LLVMIntType", "I")
+F("P", "LLVMFloatType", "")
+F("P", "LLVMDoubleType", "")
+F("P", "LLVMPointerType", "PI")
 F("P", "LLVMFunctionType", "PPIi")
 F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
