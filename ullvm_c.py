@@ -10,8 +10,12 @@
 import ffi
 from uarray import array
 
+import ullvm_c_conf
 
-L = ffi.open("/usr/lib/llvm-6.0/lib/libLLVM.so")
+
+assert ullvm_c_conf.dynlib
+L = ffi.open(ullvm_c_conf.dynlib)
+
 
 def F(ret, name, params):
     globals()[name] = L.func(ret, name, params)
