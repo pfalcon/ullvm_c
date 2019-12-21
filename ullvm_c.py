@@ -20,6 +20,11 @@ L = ffi.open(ullvm_c_conf.dynlib)
 def F(ret, name, params):
     globals()[name] = L.func(ret, name, params)
 
+# Initializer for functions which need Python wrappers.
+def F_(ret, name, params):
+    globals()[name + "_"] = L.func(ret, name, params)
+
+
 LLVMAbortProcessAction = 0
 LLVMPrintMessageAction = 1
 LLVMReturnStatusAction = 2
@@ -51,7 +56,7 @@ F("P", "LLVMIntType", "I")
 F("P", "LLVMFloatType", "")
 F("P", "LLVMDoubleType", "")
 F("P", "LLVMPointerType", "PI")
-F("P", "LLVMFunctionType", "PPIi")
+F_("P", "LLVMFunctionType", "PPIi")
 # Struct type methods
 F("P", "LLVMStructCreateNamed", "Ps")
 F("v", "LLVMStructSetBody", "PpII")
@@ -100,3 +105,15 @@ def by_ref(type):
     if type in ("p", "P", "s"):
         type = "L"
     return array(type, [0])
+
+
+def reflist2array(l):
+    return array("L", l)
+
+
+# Note: param_count is not accepted as in raw C API
+def LLVMFunctionType(return_type, params, var_arg=False):
+    func_type = LLVMFunctionType_(
+        return_type, reflist2array(params), len(params), var_arg
+    )
+    return func_type
