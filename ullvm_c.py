@@ -58,6 +58,7 @@ F("v", "LLVMStructSetBody", "PpII")
 # Module methods
 F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
+F("v", "LLVMDumpModule", "P")
 F("P", "LLVMAddGlobal", "PPs")
 F("P", "LLVMAddFunction", "PsP")
 # Function methods
