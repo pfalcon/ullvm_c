@@ -4,8 +4,8 @@ import ffi
 
 mod = LLVMModuleCreateWithName("mod")
 
-param_types = array("L", [LLVMInt32Type(), LLVMInt32Type()])
-func_type = LLVMFunctionType(LLVMInt32Type(), param_types, 2, 0)
+param_types = [LLVMInt32Type(), LLVMInt32Type()]
+func_type = LLVMFunctionType(LLVMInt32Type(), param_types, False)
 sum = LLVMAddFunction(mod, "sum", func_type)
 
 entry = LLVMAppendBasicBlock(sum, "entry")
