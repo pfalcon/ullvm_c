@@ -83,6 +83,8 @@ F("P", "LLVMBuildStore", "PPP")
 F("P", "LLVMBuildAdd", "PPPs")
 F("P", "LLVMBuildNeg", "PPs")
 F("P", "LLVMBuildRet", "PP")
+F("P", "LLVMBuildBr", "PP")
+F("P", "LLVMBuildCondBr", "PPPP")
 # Codegeneration functions
 F("v", "LLVMInitializeX86TargetInfo", "")
 F("v", "LLVMInitializeX86Target", "")
