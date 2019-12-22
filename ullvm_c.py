@@ -60,6 +60,10 @@ F_("P", "LLVMFunctionType", "PPIi")
 # Struct type methods
 F("P", "LLVMStructCreateNamed", "Ps")
 F("v", "LLVMStructSetBody", "PpII")
+# Value methods
+F("s", "LLVMGetValueName", "P")
+F("v", "LLVMSetValueName", "Ps")
+F("P", "LLVMTypeOf", "P")
 # Module methods
 F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
