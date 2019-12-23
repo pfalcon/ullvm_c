@@ -68,6 +68,7 @@ F("P", "LLVMTypeOf", "P")
 F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
 F("v", "LLVMDumpModule", "P")
+F_("s", "LLVMPrintModuleToString", "P")
 F("P", "LLVMAddGlobal", "PPs")
 F("P", "LLVMAddFunction", "PsP")
 # Function methods
@@ -123,3 +124,11 @@ def LLVMFunctionType(return_type, params, var_arg=False):
         return_type, reflist2array(params), len(params), var_arg
     )
     return func_type
+
+
+def LLVMPrintModuleToString(m):
+    s = LLVMPrintModuleToString_(m)
+    # Would need uctypes.str_at(), or alternatively, strlen(). For now just
+    # use ffi's "s" return type. TODO: Fix memory leak.
+    #LLVMDisposeMessage(s)
+    return s
