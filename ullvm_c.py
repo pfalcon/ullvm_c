@@ -103,7 +103,12 @@ F("P", "LLVMCreateGenericValueOfInt", "Pqi")
 F("P", "LLVMRunFunction", "PPIP")
 F("Q", "LLVMGetFunctionAddress", "Ps")
 
-F("P", "LLVMOrcMakeSharedModule", "P")
+# LLVMOrcMakeSharedModule is removed in LLVM 7 as apparently no longer needed
+try:
+    F("P", "LLVMOrcMakeSharedModule", "P")
+except OSError:  # ENOENT
+    LLVMOrcMakeSharedModule = lambda x: x
+
 F("P", "LLVMOrcCreateInstance", "P")
 F("i", "LLVMOrcAddEagerlyCompiledIR", "PpPCp")
 F("i", "LLVMOrcAddLazilyCompiledIR", "PpPCp")
