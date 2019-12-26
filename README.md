@@ -10,6 +10,14 @@ implementation of the Python language. Pycopy's `ffi` module was also
 so `ullvm_c` is compatible with CPython too (or any other Python
 implementation which provides `ctypes` module).
 
+Two examples are included, JIT-generating a simple function, using both
+older MCJIT, and newer ORC LLVM JIT engines:
+
+```
+pycopy example_mcjit.py
+pycopy example_orcjit.py
+```
+
 Licensing and copyright
 -----------------------
 
