@@ -18,6 +18,23 @@ pycopy example_mcjit.py
 pycopy example_orcjit.py
 ```
 
+Using with CPython
+------------------
+
+To using with CPython, you would need to install Pycopy compatibility
+modules for CPython:
+
+```
+pip3 install -r requirements-cpython.txt
+```
+
+Afterwards, you can run the samples in the same way as with Pycopy:
+
+```
+python3 example_mcjit.py
+python3 example_orcjit.py
+```
+
 Licensing and copyright
 -----------------------
 
