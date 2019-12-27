@@ -1,0 +1,2 @@
+pycopy-cpython-ffi
+pycopy-cpython-uarray
