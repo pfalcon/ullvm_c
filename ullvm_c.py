@@ -73,6 +73,7 @@ F("P", "LLVMAddGlobal", "PPs")
 F("P", "LLVMAddFunction", "PsP")
 # Function methods
 F("P", "LLVMAppendBasicBlock", "Ps")
+F("I", "LLVMCountParams", "P")
 F("P", "LLVMGetParam", "PI")
 # Builder methods
 F("P", "LLVMCreateBuilder", "")
