@@ -57,6 +57,7 @@ F("P", "LLVMFloatType", "")
 F("P", "LLVMDoubleType", "")
 F("P", "LLVMPointerType", "PI")
 F_("P", "LLVMFunctionType", "PPIi")
+F("P", "LLVMGetElementType", "P")
 # Struct type methods
 F("P", "LLVMStructCreateNamed", "Ps")
 F("v", "LLVMStructSetBody", "PpII")
