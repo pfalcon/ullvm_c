@@ -6,6 +6,8 @@ mod = LLVMModuleCreateWithName("mod")
 param_types = [LLVMInt32Type(), LLVMInt32Type()]
 func_type = LLVMFunctionType(LLVMInt32Type(), param_types, False)
 sum = LLVMAddFunction(mod, "sum", func_type)
+LLVMSetValueName(LLVMGetParam(sum, 0), "a")
+LLVMSetValueName(LLVMGetParam(sum, 1), "b")
 
 entry = LLVMAppendBasicBlock(sum, "entry")
 
