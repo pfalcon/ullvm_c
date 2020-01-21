@@ -18,6 +18,7 @@ tmp = LLVMBuildAdd(builder, LLVMGetParam(sum, 0), LLVMGetParam(sum, 1), "tmp")
 LLVMBuildRet(builder, tmp)
 
 print("LLVMVerifyModule:", LLVMVerifyModule(mod, LLVMAbortProcessAction, None))
+LLVMDumpModule(mod)
 
 LLVMInitializeX86TargetInfo()
 LLVMInitializeX86Target()
