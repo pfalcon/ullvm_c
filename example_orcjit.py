@@ -1,3 +1,9 @@
+# First import conf module, and set path to a LLVM .so which you have around
+# (ullvm_c should support LLVM version 6 and higher).
+import ullvm_c_conf
+ullvm_c_conf.init("/usr/lib/x86_64-linux-gnu/libLLVM-7.so")
+# After that, can import ullvm_c module, including using "from ... import *"
+# syntax.
 from ullvm_c import *
 import ffi
 
