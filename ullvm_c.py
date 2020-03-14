@@ -51,7 +51,10 @@ LLVMCodeModelLarge = 5
 
 # Type methods
 F("P", "LLVMVoidType", "")
+F("P", "LLVMInt8Type", "")
+F("P", "LLVMInt16Type", "")
 F("P", "LLVMInt32Type", "")
+F("P", "LLVMInt64Type", "")
 F("P", "LLVMIntType", "I")
 F("P", "LLVMFloatType", "")
 F("P", "LLVMDoubleType", "")
