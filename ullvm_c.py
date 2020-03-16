@@ -69,6 +69,7 @@ F("s", "LLVMGetValueName", "P")
 F("v", "LLVMSetValueName", "Ps")
 F("P", "LLVMTypeOf", "P")
 F("P", "LLVMConstInt", "PQI")
+F("P", "LLVMConstString", "sII")
 # Module methods
 F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
