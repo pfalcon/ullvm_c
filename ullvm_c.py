@@ -88,6 +88,7 @@ F("v", "LLVMPositionBuilderAtEnd", "PP")
 F("P", "LLVMBuildAlloca", "PPs")
 F("P", "LLVMBuildLoad", "PPs")
 F("P", "LLVMBuildStore", "PPP")
+F_("P", "LLVMBuildGEP", "PPPIs")
 F("P", "LLVMBuildAdd", "PPPs")
 F("P", "LLVMBuildNeg", "PPs")
 F("P", "LLVMBuildRet", "PP")
@@ -142,6 +143,14 @@ def LLVMFunctionType(return_type, params, var_arg=False):
         return_type, reflist2array(params), len(params), var_arg
     )
     return func_type
+
+
+# Note: NumIndices is not accepted as in raw C API
+def LLVMBuildGEP(builder, ptr, indices, name=None):
+    val = LLVMBuildGEP_(
+        builder, ptr, reflist2array(indices), len(indices), name
+    )
+    return val
 
 
 def LLVMPrintModuleToString(m):
