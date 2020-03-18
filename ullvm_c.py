@@ -91,6 +91,7 @@ F("P", "LLVMBuildStore", "PPP")
 F_("P", "LLVMBuildGEP", "PPPIs")
 F("P", "LLVMBuildAdd", "PPPs")
 F("P", "LLVMBuildNeg", "PPs")
+F_("P", "LLVMBuildCall", "PPPIs")
 F("P", "LLVMBuildRet", "PP")
 F("P", "LLVMBuildBr", "PP")
 F("P", "LLVMBuildCondBr", "PPPP")
@@ -149,6 +150,14 @@ def LLVMFunctionType(return_type, params, var_arg=False):
 def LLVMBuildGEP(builder, ptr, indices, name=None):
     val = LLVMBuildGEP_(
         builder, ptr, reflist2array(indices), len(indices), name
+    )
+    return val
+
+
+# Note: NumArgs is not accepted as in raw C API
+def LLVMBuildCall(builder, func, args, name=""):
+    val = LLVMBuildCall_(
+        builder, func, reflist2array(args), len(args), name
     )
     return val
 
