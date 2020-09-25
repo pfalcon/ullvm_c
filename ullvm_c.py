@@ -77,6 +77,7 @@ F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
 F("v", "LLVMDumpModule", "P")
 F_("s", "LLVMPrintModuleToString", "P")
+F("i", "LLVMWriteBitcodeToFile", "Ps")
 F("P", "LLVMAddGlobal", "PPs")
 F("P", "LLVMAddFunction", "PsP")
 # Function methods
