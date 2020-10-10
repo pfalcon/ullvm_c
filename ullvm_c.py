@@ -107,6 +107,7 @@ F("P", "LLVMBuildCondBr", "PPPP")
 # Context methods
 F("P", "LLVMGetGlobalContext", "")
 # Memory and resource management
+F("P", "LLVMCreateMemoryBufferWithMemoryRangeCopy", "PLP")
 F("v", "LLVMDisposeMessage", "P")
 # Codegeneration functions
 F("v", "LLVMInitializeX86TargetInfo", "")
