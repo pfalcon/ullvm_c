@@ -81,6 +81,8 @@ F("i", "LLVMWriteBitcodeToFile", "Ps")
 F_("i", "LLVMParseIRInContext", "PPpp")
 F("P", "LLVMAddGlobal", "PPs")
 F("P", "LLVMAddFunction", "PsP")
+F("P", "LLVMGetFirstFunction", "P")
+F("P", "LLVMGetNextFunction", "P")
 # Function methods
 F("P", "LLVMAppendBasicBlock", "Ps")
 F("I", "LLVMCountParams", "P")
