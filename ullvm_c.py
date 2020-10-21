@@ -85,6 +85,8 @@ F("P", "LLVMGetFirstFunction", "P")
 F("P", "LLVMGetNextFunction", "P")
 # Function methods
 F("P", "LLVMAppendBasicBlock", "Ps")
+F("P", "LLVMGetFirstBasicBlock", "P")
+F("P", "LLVMGetNextBasicBlock", "P")
 F("I", "LLVMCountParams", "P")
 F("P", "LLVMGetParam", "PI")
 # Builder methods
