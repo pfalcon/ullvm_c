@@ -91,6 +91,8 @@ F("I", "LLVMCountParams", "P")
 F("P", "LLVMGetParam", "PI")
 # Basic Block methods
 F("P", "LLVMGetFirstInstruction", "P")
+# Instruction methods
+F("P", "LLVMGetNextInstruction", "P")
 # Builder methods
 F("P", "LLVMCreateBuilder", "")
 F("v", "LLVMPositionBuilderAtEnd", "PP")
