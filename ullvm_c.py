@@ -77,6 +77,7 @@ F("P", "LLVMModuleCreateWithName", "s")
 F("i", "LLVMVerifyModule", "PIp")
 F("v", "LLVMDumpModule", "P")
 F_("s", "LLVMPrintModuleToString", "P")
+F_("i", "LLVMParseBitcode2", "Pp")
 F("i", "LLVMWriteBitcodeToFile", "Ps")
 F_("i", "LLVMParseIRInContext", "PPpp")
 F("P", "LLVMAddGlobal", "PPs")
@@ -187,6 +188,13 @@ def LLVMPrintModuleToString(m):
     # use ffi's "s" return type. TODO: Fix memory leak.
     #LLVMDisposeMessage(s)
     return s
+
+
+def LLVMParseBitcode2(buf):
+    mod_ref = by_ref("P")
+    res = LLVMParseBitcode2_(buf, mod_ref)
+    assert res == 0
+    return mod_ref[0]
 
 
 def LLVMParseIRInContext(ctx, buf):
