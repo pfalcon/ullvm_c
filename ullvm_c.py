@@ -94,6 +94,7 @@ F("P", "LLVMGetParam", "PI")
 F("P", "LLVMGetFirstInstruction", "P")
 # Instruction methods
 F("P", "LLVMGetNextInstruction", "P")
+F("i", "LLVMGetInstructionOpcode", "P")
 # Builder methods
 F("P", "LLVMCreateBuilder", "")
 F("v", "LLVMPositionBuilderAtEnd", "PP")
